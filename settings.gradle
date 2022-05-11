@@ -1,3 +1,21 @@
+plugins {
+    id "com.gradle.enterprise" version "3.10"
+    id 'com.gradle.common-custom-user-data-gradle-plugin' version '1.6.5'
+}
+
+gradleEnterprise {
+    // configuration
+    server = "http://ge.ryandens.com"
+    allowUntrustedServer = true
+    buildScan {
+        publishAlways()
+        capture {
+            taskInputFiles = true
+        }
+        uploadInBackground = System.getenv("CI") == null
+    }
+}
+
 rootProject.name = 'resilience4j'
 include 'resilience4j-test'
 include 'resilience4j-core'
