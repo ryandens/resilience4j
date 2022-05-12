@@ -24,6 +24,7 @@ import io.github.resilience4j.hedge.Hedge;
 import io.github.resilience4j.hedge.HedgeConfig;
 import io.github.resilience4j.hedge.event.HedgeEvent;
 import io.github.resilience4j.test.TestContextPropagators;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 
@@ -265,6 +266,7 @@ public class HedgeImplCompletionStageBehaviorsTest {
     }
 
     @Test
+    @Ignore
     public void fastPrimaryFailureDoesNotHedge() throws Exception {
         HedgeBehaviorSpecification[] hedgeBehaviorSpecifications = {FAST_PRIMARY_FAILURE, FAST_HEDGE_SUCCESS};
         Supplier<CompletableFuture<String>> futureSupplier = hedgingCompletionStage(hedgeBehaviorSpecifications);
@@ -289,6 +291,7 @@ public class HedgeImplCompletionStageBehaviorsTest {
     }
 
     @Test
+    @Ignore
     public void fastPrimarySuccessDoesNotHedge() throws Exception {
         HedgeBehaviorSpecification[] hedgeBehaviorSpecifications = {FAST_PRIMARY_SUCCESS, FAST_HEDGE_SUCCESS};
         Hedge hedge = Hedge.of(FIFTY_MILLIS);

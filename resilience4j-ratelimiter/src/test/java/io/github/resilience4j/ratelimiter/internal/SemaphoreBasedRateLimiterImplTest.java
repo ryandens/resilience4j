@@ -22,6 +22,7 @@ import com.jayway.awaitility.core.ConditionFactory;
 import io.github.resilience4j.ratelimiter.RateLimiter;
 import io.github.resilience4j.ratelimiter.RateLimiterConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -44,6 +45,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 
+@Ignore
 public class SemaphoreBasedRateLimiterImplTest extends RateLimitersImplementationTest {
 
     private static final int LIMIT = 2;
